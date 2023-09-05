@@ -1,3 +1,8 @@
 # Redux-Toolkit-Nuggets
 
-#Creating slices: 1.Define your initial state on the way it is going to be created 2.
+#Once per Project do the following:
+### How to connect redux to react?
+1.Export the file in which the store was created.
+2.Import the store into the root index.js file.
+3.Import Provider from react-redux
+4.Wrap The App Component with the Provider, pass the store to the provider.
