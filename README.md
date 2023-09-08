@@ -21,5 +21,15 @@ Prerequisites:ES6 Syntax, Knowledge of react terminology such as State, JSX, Fun
 3.Call the hook pass it selector function ( arrow function ) -W const songPlaylist=useSelector((state)=→{return state.songs})     
 4.Use the state, anytime the state updates, the component will automatically rerender.    
 
+### HARD-RESET THE STATE:   
+we simply create an action creator inside a reducer e.g   
+reset(state, action){     
+return [];   
+}     
+then we export that part and use it inside a dispatch function of an event handler.   
+But what if we want to update multiple state in just one single action creator?:    
+Don't make a reset function in a single slice to update also the other slice !! NOPE !!   
+Don't make same function twice in both reducers !! NOPE !!   
+
 
 
