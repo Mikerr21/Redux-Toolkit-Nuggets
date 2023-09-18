@@ -1,4 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+
+
 const movieSlice = createSlice({
   name: "movie",
   initialState: [],
@@ -10,9 +12,11 @@ const movieSlice = createSlice({
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
     },
-    reset(state, action) {
+  },
+  extraReducers(builder){
+    builder.addCase(reset,(state,action)=>{
       return [];
-    }
+    })
   }
 });
 const songsSlice = createSlice({
@@ -30,7 +34,12 @@ const songsSlice = createSlice({
     reset(state, action) {
       return [];
     }
-  }
+  } ,
+  extraReducers(builder){
+    builder.addCase(reset,(state,action)=>{
+      return [];
+    })
+  } 
 });
 
 const store = configureStore({
@@ -40,11 +49,7 @@ const store = configureStore({
   }
 });
 
-store.dispatch(songsSlice.actions.addSong("Some Song!"));
-
-const finalState = store.getState();
-console.log(JSON.stringify(finalState));
 
 export { store };
 export const { addSong, removeSong } = songsSlice.actions;
-export const { addMovie, removeMovie, reset } = movieSlice.actions;
+export const { addMovie, removeMovie } = movieSlice.actions;
