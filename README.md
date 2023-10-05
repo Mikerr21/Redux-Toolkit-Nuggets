@@ -1,7 +1,6 @@
 # Redux-Toolkit-Nuggets
 Prerequisites:ES6 Syntax, Knowledge of react terminology such as State, JSX, Function Components,Props and Hooks, Basic understanding of Redux terms&concepts.
-
-
+Let's dive deeper now:
 
 ### How to connect redux to react?:- 
 1.Export the file in which the store was created.  
@@ -56,4 +55,6 @@ somethingSlice.actions.miniReducerName.toString(); to get an action creator's ty
 ### Organizing folder structure:
 1.Organizing by function: components folder and inside our event handlers components - store folder and inside slices and index.js and actions
 2.Organizing by feature: for example- Each component has it's folder where you can find it's event handling component and it's slice. but the actions.js stays inside a store folder alone.
+
+
 
